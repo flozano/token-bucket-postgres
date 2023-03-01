@@ -1,13 +1,14 @@
 -- Tables
-DROP TABLE IF EXISTS token_buckets;
+-- DROP TABLE IF EXISTS token_buckets;
 CREATE TABLE token_buckets (
-    user_id VARCHAR(100) PRIMARY KEY,
-    tokens INTEGER,
-    last_refill TIMESTAMP
+    key_id      varchar(100) PRIMARY KEY,
+    tokens      int4,
+    last_refill timestamptz
 );
-DROP TABLE IF EXISTS token_rates;
+-- DROP TABLE IF EXISTS token_rates;
 CREATE TABLE token_rates (
-    user_id VARCHAR(100) PRIMARY KEY,
-    per_hour INTEGER
+    key_id         varchar(100) PRIMARY KEY,
+    per_period     int4,
+    period_seconds int4
 );
 
