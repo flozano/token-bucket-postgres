@@ -4,8 +4,8 @@ from pg import DB
 db = DB()
 
 # Create user 'foo' wih rate 3600
-db.query('DELETE FROM token_buckets WHERE user_id = \'foo\';')
-db.query('INSERT INTO token_rates (user_id, per_hour) VALUES (\'foo\', 3600) ON CONFLICT (user_id) DO UPDATE SET per_hour = EXCLUDED.per_hour;')
+db.query('DELETE FROM token_buckets WHERE key_id = \'foo\';')
+db.query('INSERT INTO token_rates (user_id, per_period, period_seconds) VALUES (\'foo\', 3600, 3600) ON CONFLICT (key_id) DO UPDATE SET per_period = EXCLUDED.per_period, period_seconds = EXCLUDED.period_seconds;')
 
 # Disable "NOTICE" messages
 db.query('SET client_min_messages TO WARNING;')
