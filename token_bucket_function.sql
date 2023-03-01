@@ -54,7 +54,6 @@ BEGIN
         RETURN FALSE;
     END IF;
     
-    RETURN take_token_with_rate(rate_key, rate, rate_period)
+    RETURN take_token_with_rate(rate_key, rate, rate_period);
 END
-
 $$ LANGUAGE plpgsql;

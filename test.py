@@ -17,5 +17,5 @@ for i in range(5000):
     if q.getresult()[0][0]:
         token_counter += 1
 
-print "Got {} tokens in total".format(token_counter)
+print("Got {} tokens in total".format(token_counter))
 
